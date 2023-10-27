@@ -206,16 +206,16 @@ require('telescope').setup {
       },
     },
   },
-  pickers = {
-    find_files = {
-      hidden = true,
-    },
-    live_grep = {
-      additional_args = function(opts)
-        return { "--hidden" }
-      end
-    },
-  },
+  -- pickers = {
+  --   find_files = {
+  --     hidden = true,
+  --   },
+  --   live_grep = {
+  --     additional_args = function(opts)
+  --       return { "--hidden" }
+  --     end
+  --   },
+  -- },
 }
 
 -- Enable telescope fzf native, if installed
@@ -247,8 +247,8 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'vimdoc', 'vim',
     'c', 'cpp', 'go', 'lua', 'python', 'rust',
-    'tsx', 'javascript', 'typescript',
-    'html', 'css', 'vue',
+    'tsx', 'javascript', 'typescript', 'json', 'yaml',
+    'html', 'css', 'vue', 'pug',
   },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -376,6 +376,7 @@ local servers = {
   },
   tsserver = {},
   eslint = {},
+  md = {},
   html = { filetypes = { 'html', 'pug' } },
   volar = {},
   tailwindcss = {},

@@ -1,6 +1,6 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
-vim.o.guicursor = ""
+-- vim.o.guicursor = ""
 vim.o.mouse = 'a'
 
 vim.o.nu = true
