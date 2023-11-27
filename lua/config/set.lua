@@ -12,7 +12,7 @@ vim.o.breakindent = true
 vim.o.wrap = false
 
 -- Sync clipboard between OS and Neovim.
---  See `:help 'clipboard'`
+-- See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
 vim.o.swapfile = false

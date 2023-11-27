@@ -10,8 +10,8 @@ vim.keymap.set("n", "<C-up>", "<C-Y>", { noremap = true })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<A-j>", ":call append(line('.'), '')<CR>")
-vim.keymap.set("n", "<A-k>", ":call append(line('.')-1, '')<CR>")
+-- vim.keymap.set("n", "<A-j>", ":call append(line('.'), '')<CR>")
+-- vim.keymap.set("n", "<A-k>", ":call append(line('.')-1, '')<CR>")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -36,6 +36,5 @@ vim.keymap.set("n",
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = '[S]each and Repla[s]e' }
 )
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 return {}
