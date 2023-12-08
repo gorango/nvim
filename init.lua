@@ -139,6 +139,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'CKolkey/ts-node-action',
     },
     build = ':TSUpdate',
   },
