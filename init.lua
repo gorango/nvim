@@ -139,6 +139,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'windwp/nvim-ts-autotag',
       'CKolkey/ts-node-action',
     },
     build = ':TSUpdate',
@@ -240,6 +241,9 @@ require('nvim-treesitter.configs').setup {
       scope_incremental = '<c-s>',
       node_decremental = '<M-space>',
     },
+  },
+  autotag = {
+    enable = true,
   },
   textobjects = {
     select = {
