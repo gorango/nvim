@@ -182,6 +182,12 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    file_ignore_patterns = {
+      'yarn.lock',
+      'package%-lock.json',
+      'pnpm%-lock.yaml',
+      'lazy%-lock.json',
+    }
   },
   -- pickers = {
   --   find_files = {
