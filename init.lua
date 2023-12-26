@@ -145,6 +145,8 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  { 'nvim-tree/nvim-web-devicons', lazy = true },
+
   -- require 'plugins.autoformat',
   -- require 'plugins.debug',
   { import = 'config' },
