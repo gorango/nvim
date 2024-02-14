@@ -10,18 +10,7 @@ vim.keymap.set("n", "<C-up>", "<C-Y>", { noremap = true })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- vim.keymap.set("n", "<A-j>", ":call append(line('.'), '')<CR>")
--- vim.keymap.set("n", "<A-k>", ":call append(line('.')-1, '')<CR>")
-
-vim.keymap.set("x", "<leader>p", [["_dP]])
-
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
 vim.keymap.set("i", "<C-c>", "<Esc>")
-
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
 vim.keymap.set("n", "Q", "<nop>")
