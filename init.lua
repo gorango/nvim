@@ -230,14 +230,23 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = {
-    'vimdoc', 'vim',
+    'vimdoc', 'vim', 'comment', 'regex', 'sql',
     'c', 'cpp', 'go', 'lua', 'python', 'rust',
     'tsx', 'javascript', 'typescript', 'json', 'yaml',
-    'html', 'css', 'vue', 'pug',
+    'html', 'css', 'vue', 'pug', 'markdown', 'latex', 'liquid',
+    'bash', 'fish', 'dockerfile', 'tmux',
   },
 
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
+
+  -- List of parsers to ignore installing (or "all")
+  ignore_install = {},
+
+  modules = {},
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -364,7 +373,7 @@ local servers = {
   },
   tsserver = {},
   eslint = {},
-  html = { filetypes = { 'html', 'pug' } },
+  html = { filetypes = { 'html', 'pug', 'njk' } },
   volar = {},
   tailwindcss = {},
   unocss = {},
