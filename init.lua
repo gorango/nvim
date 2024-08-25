@@ -49,7 +49,24 @@ require('lazy').setup({
     },
   },
 
-  { 'folke/which-key.nvim',  opts = {} }, -- Show pending keybinds
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  }, -- Show pending keybinds
 
   {
     'lewis6991/gitsigns.nvim', -- git signs in gutter & change utilities
@@ -111,7 +128,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',       opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -233,8 +250,8 @@ require('nvim-treesitter.configs').setup {
     'vimdoc', 'vim', 'comment', 'regex', 'sql',
     'c', 'cpp', 'go', 'lua', 'python', 'rust',
     'tsx', 'javascript', 'typescript', 'json', 'yaml',
-    'html', 'css', 'vue', 'pug', 'markdown', 'latex', 'liquid',
-    'bash', 'fish', 'dockerfile', 'tmux',
+    'html', 'css', 'vue', 'pug', 'embedded_template', 'markdown', 'latex', 'liquid',
+    'bash', 'fish', 'tmux',
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -352,17 +369,6 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
--- document existing key chains
-require('which-key').register({
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-})
-
 -- language servers
 local servers = {
   lua_ls = {
@@ -373,7 +379,7 @@ local servers = {
   },
   tsserver = {},
   eslint = {},
-  html = { filetypes = { 'html', 'pug', 'njk' } },
+  html = { filetypes = { 'html', 'pug', 'ejs' } },
   volar = {},
 
   tailwindcss = {},
