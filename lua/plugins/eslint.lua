@@ -29,7 +29,7 @@ return {
     })
     vim.api.nvim_create_autocmd("BufWritePre", {
       callback = function(event)
-        local client = vim.lsp.get_active_clients({ bufnr = event.buf, name = "eslint" })[1]
+        local client = vim.lsp.get_clients({ bufnr = event.buf, name = "eslint" })[1]
         if client then
           local diag = vim.diagnostic.get(event.buf,
             { namespace = vim.lsp.diagnostic.get_namespace(client.id) })
