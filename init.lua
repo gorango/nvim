@@ -381,7 +381,6 @@ local servers = {
   eslint = {},
   html = { filetypes = { 'html', 'pug', 'ejs' } },
   volar = {},
-
   tailwindcss = {},
   unocss = {},
 }
